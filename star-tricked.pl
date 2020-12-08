@@ -59,12 +59,15 @@ solve :-
 % "!" Represents the Cut, prevents backtracking 
 all_different([H | T]) :- member(H, T), !, fail.
 all_different([_ | T]) :- all_different(T).
+% Empty list is all different
 all_different([_]).
 
 % X (head) comes before any element in the tail
 earlier(X, _, [X | _]).
 % Any element comes before Y when Y is the head should fail and not backtrack.
 earlier(_, Y, [Y | _]) :- !, fail.
+% If X and Y are not the anonymous element, then check which came earlier
+% in the list tail (Z). 
 earlier(X, Y, [_ | Z]) :- earlier(X, Y, Z). 
 
 tell(X, Y, Z) :-

@@ -30,9 +30,9 @@ solve :-
                 [Klatu, KlatuUFO, thursday],
                 [Nikto, NiktoUFO, friday] ],
 
-	% 1. Mr. Klatu made his sighting at some point earlier in the week than the
-	%    one who saw the balloon, but at some point later in the week than the
-	%    one who spotted the frisbee (who isn't Ms. Gort)
+	% 1. Mr. Klatu made his sighting at some point earlier in the week than the one who 
+  % saw the balloon, but at some point later in the week than the one who 
+  % spotted the frisbee (who isn't Ms. Gort)
 	\+(member([klatu, balloon, _], Triples)),
 	\+(member([klatu, frisbee, _], Triples)),
 	\+(member([gort, frisbee, _], Triples)),
